@@ -36,21 +36,11 @@ A PID controller was designed with the following goals:
 
 MATLAB's `Control System Designer` was used to tune the PID parameters and validate the performance.
 
-### Code Example
-Below is an example of the MATLAB script for characterizing the system:
+## Future Directions
+This platform can be extended to:
+- Real-time process control in manufacturing systems.
+- Implementing advanced strategies like model predictive control (MPC).
+- Educational purposes for understanding PID control systems.
 
-```matlab
-clc; clear all; close all;
-
-% System parameters
-K = 0.132625 * 80; % Gain (from experimental data)
-tau = 42.2; % Time constant (s)
-theta = 2; % Dead time (s)
-
-% Transfer function without delay (approximation for Control Designer)
-num = [K];
-den = [tau, 1];
-Gs = tf(num, den);
-
-% Open Control System Designer
-controlSystemDesigner(Gs);
+## Conclusion
+This project successfully demonstrated the design and implementation of a PID controller for a single-heater temperature control system. Through precise modeling and validation using MATLAB, the system achieved desired performance metrics, including fast response, minimal overshoot, and zero steady-state error. The project highlights the importance of accurate parameter estimation and control system tuning in achieving optimal performance. Future advancements, such as real-time implementation and predictive control strategies, can further enhance the system's applicability across various industries.
